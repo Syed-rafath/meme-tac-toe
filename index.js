@@ -85,6 +85,7 @@ function checkWinner(){
             console.log(a,b,c);
             statusText.textContent=`${currentPlayer} has won the game`;
             winnerFound=true;
+            triggerMeme()
             
         }
         
@@ -100,6 +101,18 @@ function checkWinner(){
 
     
 }
+function triggerMeme() {
+  const overlay = document.getElementById("memeOverlay");
+  const video = document.getElementById("memeVideo");
+  const sound = document.getElementById("memeSound");
+
+  overlay.style.display = "flex";
+  overlay.classList.add("flash");
+
+  video.play();
+  //sound.play();
+}
+
 
 function restartGame(){
     currentPlayer = "X";
