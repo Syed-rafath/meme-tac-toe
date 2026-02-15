@@ -1,0 +1,82 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7b579c3..28b3f2a 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -24,6 +24,6 @@[m
+         <h2 id="statusText"></h2>[m
+         <button id="restartBtn">Restart</button>[m
+     </div>[m
+[31m-[m
+[32m+[m[32m    <script src="index.js"></script>[m
+ </body>[m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/index.js b/index.js[m
+[1mindex e69de29..93da7d2 100644[m
+[1m--- a/index.js[m
+[1m+++ b/index.js[m
+[36m@@ -0,0 +1,63 @@[m
+[32m+[m[32m// . is for class and # is for id[m[41m [m
+[32m+[m[32mconst cells= document.querySelectorAll(".cell");[m
+[32m+[m[32mconst statusText=document.querySelector("#statusText");[m
+[32m+[m[32mconst restartBtn= document.querySelector("restartBtn");[m
+[32m+[m[32mconst winConditions= [[m
+[32m+[m[32m    [0,1,2],[m
+[32m+[m[32m    [3,4,5],[m
+[32m+[m[32m    [6,7,8],[m
+[32m+[m[32m    [0,3,6],[m
+[32m+[m[32m    [1,4,7],[m
+[32m+[m[32m    [2,5,8],[m
+[32m+[m[32m    [0,4,8],[m
+[32m+[m[32m    [2,4,6][m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mlet options=["","","","","","","","",""];[m
+[32m+[m[32mlet currentPlayer='X';[m
+[32m+[m[32mlet running=false;[m
+[32m+[m[32m// cells.forEach((cell, index) => {[m
+[32m+[m[32m//     setTimeout(() => {[m
+[32m+[m[32m//         // Use curly braces for multiple lines![m
+[32m+[m[32m//         cell.style.backgroundColor = "pink";[m
+[32m+[m[32m//         console.log(`hello from cell ${index}`);[m
+[32m+[m[32m//     }, 100 * index); // Multiply by index to see them happen one-by-one[m
+[32m+[m[32m// });[m
+[32m+[m
+[32m+[m[32minitializeGame();[m
+[32m+[m
+[32m+[m[32mfunction initializeGame(){[m
+[32m+[m[32m    cells.forEach((cell,index) =>{[m
+[32m+[m[32m        setTimeout(()=>{[m
+[32m+[m[32m            cell.style.backgroundColor="pink";[m
+[32m+[m[32m            console.log(`${index} colored`);[m
+[32m+[m[32m            cell.addEventListener("click",cellClicked);[m
+[32m+[m[32m        },index*400);[m
+[32m+[m[32m        running = true;[m
+[32m+[m
+[32m+[m[32m    });[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction cellClicked(){[m
+[32m+[m[32m    const cellIndex=this.getAttribute("cellIndex");[m
+[32m+[m[32m    console.log(`you are gay for clicking cell ${cellIndex}`);[m
+[32m+[m
+[32m+[m[32m    if(options[cellIndex]!="" || !running){[m
+[32m+[m[32m        return;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    updateCell(this,cellIndex);[m
+[32m+[m[32m    checkWinner();[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction updateCell(cell,index){[m
+[32m+[m[32m    options[index]=currentPlayer;[m
+[32m+[m[32m    cell.textContent=currentPlayer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction checkWinner(){[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction restartGame(){[m
+[32m+[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
