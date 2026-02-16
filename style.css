@@ -1,3 +1,5 @@
+
+
 .cell{
     width: 75px;
     height: 75px;
@@ -19,78 +21,102 @@
     grid-template-columns: repeat(3,auto);
     width: 225px;
     margin:auto;
+    
 }
 
-#memeOverlay {
+/* #memeOverlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   background: black;
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
+} */
 
-#memeVideo {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-}
+
+
 
 .flash {
   animation: flash 0.2s infinite;
+  
 }
 
 @keyframes flash {
-  0% { background: red; }
-  50% { background: white; }
-  100% { background: red; }
-}
-
-#moveSquare{
-    /* justify-content: center;
-    align-items: center; */
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    /* background-color: black; */
-    border: 5px solid aqua;
-    text-align:center; 
-    font-size: 50px;
-    box-shadow: 0 0 8px aqua, 0 0 8px aqua inset;
-
-    animation-name:completeFlip;
-    /* animation-name:spinRound; */
-    animation-duration: 6s;
-
+  0% { 
+    opacity: 0.1;
+    background: red; }
+  50% { 
+    opacity:0.5;
+    background: white; }
+  100% { 
+    opacity:0.1;
+    background: red; }
 }
 
 @keyframes completeFlip {
-    0%{
-        transform:rotateX(0deg);
-    }
-    25%{
-        transform:rotateX(360deg);
-    }
-    26%{
-        transform:rotateY(0deg);
-    }
-    50%{
-        transform:rotateY(360deg);
-    }
-    51%{
-        transform:rotateZ(0deg);
-    }
-    100%{
-        transform:rotateZ(360deg);
-    }
-
+    0%   { transform: translate(-50%, -50%) rotateX(0deg); }
+    25%  { transform: translate(-50%, -50%) rotateX(360deg); }
+    26%  { transform: translate(-50%, -50%) rotateY(0deg); }
+    50%  { transform: translate(-50%, -50%) rotateY(360deg); }
+    51%  { transform: translate(-50%, -50%) rotateZ(0deg); }
+    100% { transform: translate(-50%, -50%) rotateZ(360deg); }
 }
 
-@keyframes frontFlip {
+#memeVideo {
+  display: block;      /* Changed from none to test; change back if triggering via JS */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 40vw;
+  aspect-ratio: 9/16;
+  object-fit: contain;
+  
+  /* CRITICAL FIX: Added duration (5s) and iteration count (infinite) */
+  animation: completeFlip 5s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes frontFlip {
     0%{
         transform:rotateX(0deg);
     }
@@ -116,4 +142,4 @@
     100%{
         transform:rotateZ(360deg);
     }
-}
+} */

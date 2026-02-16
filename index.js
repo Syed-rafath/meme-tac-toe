@@ -101,17 +101,34 @@ function checkWinner(){
 
     
 }
+
+// function triggerMeme() {
+//   //const overlay = document.getElementById("memeOverlay");
+//   const video = document.getElementById("memeVideo");
+//   const sound = document.getElementById("memeSound");
+
+//   overlay.style.display = "flex";
+//   //overlay.classList.add("flash");
+
+//   video.style.display = "block"; // Make it visible
+//   video.play();                  // Start playing
+//   //sound.play();
+// }
+
 function triggerMeme() {
-  const overlay = document.getElementById("memeOverlay");
   const video = document.getElementById("memeVideo");
   const sound = document.getElementById("memeSound");
 
-  overlay.style.display = "flex";
-  overlay.classList.add("flash");
+  if (video) {
+    video.style.display = "block"; // Make it visible
+    video.play();                  // Start playing
+  }
 
-  video.play();
-  //sound.play();
+//   if (sound) {
+//     sound.play();
+//   }
 }
+
 
 
 function restartGame(){

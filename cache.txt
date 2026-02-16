@@ -1,0 +1,17 @@
+#moveSquare{
+    /* justify-content: center;
+    align-items: center; */
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    /* background-color: black; */
+    border: 5px solid aqua;
+    text-align:center; 
+    font-size: 50px;
+    box-shadow: 0 0 8px aqua, 0 0 8px aqua inset;
+
+    animation-name:completeFlip;
+    /* animation-name:spinRound; */
+    animation-duration: 6s;
+
+}
