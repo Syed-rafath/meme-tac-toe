@@ -67,7 +67,7 @@
 }
 
 #memeVideo {
-  display: block;      /* Changed from none to test; change back if triggering via JS */
+  display: none;      /* Changed from none to test; change back if triggering via JS */
   position: fixed;
   top: 50%;
   left: 50%;
